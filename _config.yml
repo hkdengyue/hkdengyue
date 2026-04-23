@@ -38,3 +38,7 @@ collections:
   companies:
     output: true
     permalink: /company/:name/
+
+pipelines:
+  output: true
+  permalink: /pipeline/:name/
