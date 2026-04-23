@@ -65,3 +65,39 @@ function populateFilters(cards) {
   fillSelect("filter-modality", modalities);
   fillSelect("filter-stage", stages);
 }
+
+const sortSelect = document.getElementById("sort-by");
+
+function sortCards() {
+  const type = sortSelect.value;
+  const container = document.getElementById("explore-results");
+
+  const cardsArray = Array.from(cards);
+
+  cardsArray.sort((a, b) => {
+
+    if (type === "title") {
+      return a.dataset.title.localeCompare(b.dataset.title);
+    }
+
+    if (type === "date") {
+      return new Date(b.dataset.date) - new Date(a.dataset.date);
+    }
+
+    if (type === "stage") {
+      const order = {
+        "Approved": 4,
+        "Phase 3": 3,
+        "Phase 2": 2,
+        "Phase 1": 1
+      };
+
+      return (order[b.dataset.stage] || 0) - (order[a.dataset.stage] || 0);
+    }
+
+  });
+
+  cardsArray.forEach(card => container.appendChild(card));
+}
+
+sortSelect.addEventListener("change", sortCards);
