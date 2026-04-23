@@ -10,9 +10,11 @@ layout: default
     {{ content }}
   </div>
 
-  <p>Tags:
-    {% for tag in page.tags %}
-      <span>{{ tag }}</span>
-    {% endfor %}
-  </p>
+  <p class="tags">
+{% for tag in page.tags %}
+  <a href="/tag/{{ tag | slugify }}/">
+    <span>{{ tag }}</span>
+  </a>
+{% endfor %}
+</p>
 </article>
