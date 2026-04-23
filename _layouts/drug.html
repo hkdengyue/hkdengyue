@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+<p><strong>Generic Name:</strong> {{ page.generic }}</p>
+<p><strong>Company:</strong> {{ page.company }}</p>
+<p><strong>Mechanism:</strong> {{ page.mechanism }}</p>
+<p><strong>Indication:</strong> {{ page.indication }}</p>
+<p><strong>Stage:</strong> {{ page.stage }}</p>
+
+---
+
+<h2>Overview</h2>
+<p>{{ content }}</p>
+
+---
+
+<h2>Related Articles</h2>
+
+<div class="grid">
+
+{% for post in site.posts %}
+  {% if post.tags contains page.slug %}
+    <div class="card">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    </div>
+  {% endif %}
+{% endfor %}
+
+</div>
