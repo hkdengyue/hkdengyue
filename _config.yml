@@ -25,3 +25,12 @@ defaults:
       layout: insight
 
 permalink: /:categories/:title/
+
+collections:
+  insights:
+    output: true
+    permalink: /insights/:name/
+
+  drugs:
+    output: true
+    permalink: /drug/:name/
