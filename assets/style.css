@@ -1,0 +1,25 @@
+body {
+  font-family: Arial;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+article {
+  margin-bottom: 40px;
+}
