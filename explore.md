@@ -39,11 +39,12 @@ permalink: /explore/
 
 {% for drug in site.drugs %}
   <div class="card explore-card"
-       data-type="drug"
-       data-company="{{ drug.company }}"
-       data-target="{{ drug.mechanism }}"
-       data-modality="{{ drug.modality }}"
-       data-stage="{{ drug.stage }}">
+     data-title="{{ drug.title }}"
+     data-date="{{ drug.date }}"
+     data-stage="{{ drug.stage }}"
+     data-company="{{ drug.company }}"
+     data-target="{{ drug.mechanism }}"
+     data-modality="{{ drug.modality }}">
 
     <h3><a href="{{ drug.url }}">{{ drug.title }}</a></h3>
     <p>{{ drug.company }} | {{ drug.mechanism }}</p>
@@ -57,6 +58,9 @@ permalink: /explore/
        data-target="{{ p.target }}"
        data-modality="{{ p.modality }}"
        data-stage="{{ p.stage }}">
+       data-title="{{ p.title }}"
+       data-date="{{ p.date }}"
+       data-stage="{{ p.stage }}"
 
     <h3><a href="{{ p.url }}">{{ p.title }}</a></h3>
     <p>{{ p.company }} | {{ p.target }}</p>
