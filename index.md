@@ -5,19 +5,25 @@ title: Home
 
 # Global Pharma Intelligence
 
+## 🧨 Top Story
+
+{% assign top = site.posts.first %}
+
+<div class="hero">
+  <h2><a href="{{ top.url }}">{{ top.title }}</a></h2>
+  <p>{{ top.excerpt }}</p>
+</div>
+
+---
+
 ## 📰 Latest News
 
-<div class="grid">
+<div class="grid news">
 
-{% for post in site.posts limit:6 %}
+{% for post in site.posts offset:1 limit:6 %}
   <div class="card">
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
     <p class="meta">{{ post.date | date: "%Y-%m-%d" }}</p>
-    <p class="tags">
-      {% for tag in post.tags %}
-        <span>{{ tag }}</span>
-      {% endfor %}
-    </p>
   </div>
 {% endfor %}
 
@@ -25,7 +31,7 @@ title: Home
 
 ---
 
-## 📊 Featured Insights
+## 📊 Insights
 
 <div class="grid">
 
@@ -34,18 +40,6 @@ title: Home
     <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
   </div>
 {% endfor %}
-
-</div>
-
----
-
-## 🔍 Explore
-
-<div class="grid small">
-
-  <a class="card link" href="/therapeutics/oncology/">Oncology</a>
-  <a class="card link" href="/modalities/car-t/">CAR-T</a>
-  <a class="card link" href="/market-access/china/">China Market</a>
 
 </div>
 
