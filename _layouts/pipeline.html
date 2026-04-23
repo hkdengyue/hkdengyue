@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+<p><strong>Company:</strong> {{ page.company }}</p>
+<p><strong>Target:</strong> {{ page.target }}</p>
+<p><strong>Modality:</strong> {{ page.modality }}</p>
+<p><strong>Stage:</strong> {{ page.stage }}</p>
+<p><strong>Indication:</strong> {{ page.indication }}</p>
+
+---
+
+<h2>Overview</h2>
+<p>{{ content }}</p>
+
+---
+
+<h2>Related Drug</h2>
+
+<div class="grid">
+{% for drug in site.drugs %}
+  {% if drug.slug == page.drug %}
+    <div class="card">
+      <h3><a href="{{ drug.url }}">{{ drug.title }}</a></h3>
+    </div>
+  {% endif %}
+{% endfor %}
+</div>
+
+---
+
+<h2>Related News</h2>
+
+<div class="grid">
+{% for post in site.posts %}
+  {% if post.tags contains page.slug %}
+    <div class="card">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    </div>
+  {% endif %}
+{% endfor %}
+</div>
