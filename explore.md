@@ -66,3 +66,11 @@ permalink: /explore/
 </div>
 
 <script src="/assets/explore.js"></script>
+
+## Sort By
+
+<select id="sort-by">
+  <option value="date">Latest</option>
+  <option value="stage">Stage</option>
+  <option value="title">Name (A-Z)</option>
+</select>
