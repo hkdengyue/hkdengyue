@@ -34,3 +34,7 @@ collections:
   drugs:
     output: true
     permalink: /drug/:name/
+
+  companies:
+    output: true
+    permalink: /company/:name/
