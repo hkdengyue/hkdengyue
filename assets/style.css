@@ -100,3 +100,10 @@ select {
 #results li {
   margin-bottom: 10px;
 }
+
+select {
+  margin: 8px 10px 20px 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
