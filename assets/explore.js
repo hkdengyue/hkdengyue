@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const cards = document.querySelectorAll(".explore-card");
 
+  populateFilters(cards);
+
   function filter() {
     const c = company.value;
     const t = target.value;
