@@ -1,0 +1,37 @@
+---
+layout: null
+---
+
+[
+{% for post in site.posts %}
+{
+  "title": "{{ post.title | escape }}",
+  "url": "{{ post.url }}",
+  "content": "{{ post.content | strip_html | escape }}"
+},
+{% endfor %}
+
+{% for post in site.insights %}
+{
+  "title": "{{ post.title | escape }}",
+  "url": "{{ post.url }}",
+  "content": "{{ post.content | strip_html | escape }}"
+},
+{% endfor %}
+
+{% for drug in site.drugs %}
+{
+  "title": "{{ drug.title | escape }}",
+  "url": "{{ drug.url }}",
+  "content": "{{ drug.content | strip_html | escape }}"
+},
+{% endfor %}
+
+{% for company in site.companies %}
+{
+  "title": "{{ company.title | escape }}",
+  "url": "{{ company.url }}",
+  "content": "{{ company.content | strip_html | escape }}"
+}
+{% endfor %}
+]
