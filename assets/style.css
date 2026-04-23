@@ -88,3 +88,15 @@ select {
   border-radius: 6px;
   border: 1px solid #ddd;
 }
+
+#search-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+#results li {
+  margin-bottom: 10px;
+}
