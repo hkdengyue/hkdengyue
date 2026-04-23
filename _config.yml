@@ -1,0 +1,27 @@
+title: DengYueMed
+description: Global Pharma Intelligence & Market Access Media
+url: https://yourusername.github.io
+baseurl: ""
+
+markdown: kramdown
+theme: null
+
+collections:
+  insights:
+    output: true
+    permalink: /insights/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+  - scope:
+      path: ""
+      type: insights
+    values:
+      layout: insight
+
+permalink: /:categories/:title/
