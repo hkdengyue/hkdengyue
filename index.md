@@ -48,3 +48,15 @@ title: Home
   <a class="card link" href="/market-access/china/">China Market</a>
 
 </div>
+
+---
+
+## 🔥 Hot Topics
+
+<div class="grid small">
+
+<a class="card link" href="/topic/car-t/">CAR-T</a>
+<a class="card link" href="/topic/bispecific-antibody/">Bispecific Antibody</a>
+<a class="card link" href="/topic/bcma/">BCMA</a>
+
+</div>
