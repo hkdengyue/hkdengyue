@@ -1,0 +1,10 @@
+---
+layout: page
+title: News
+---
+
+# News
+
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url }})
+{% endfor %}
