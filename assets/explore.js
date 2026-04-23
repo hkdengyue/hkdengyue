@@ -30,3 +30,36 @@ document.addEventListener("DOMContentLoaded", function () {
   stage.addEventListener("change", filter);
 
 });
+
+function populateFilters(cards) {
+  const companies = new Set();
+  const targets = new Set();
+  const modalities = new Set();
+  const stages = new Set();
+
+  cards.forEach(card => {
+    companies.add(card.dataset.company);
+    targets.add(card.dataset.target);
+    modalities.add(card.dataset.modality);
+    stages.add(card.dataset.stage);
+  });
+
+  function fillSelect(selectId, values) {
+    const select = document.getElementById(selectId);
+
+    values.forEach(v => {
+      if (!v) return;
+
+      const option = document.createElement("option");
+      option.value = v;
+      option.textContent = v;
+
+      select.appendChild(option);
+    });
+  }
+
+  fillSelect("filter-company", companies);
+  fillSelect("filter-target", targets);
+  fillSelect("filter-modality", modalities);
+  fillSelect("filter-stage", stages);
+}
