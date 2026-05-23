@@ -6,19 +6,7 @@ import html from "remark-html";
 import gfm from "remark-gfm";
 import Image from "next/image";
 import Link from "next/link";
-
-import {
-  getAllPosts,
-  getSortedPostsData,
-} from "../../../lib/posts";
-
-export async function generateStaticParams() {
-  const posts = getSortedPostsData();
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
+import { getAllPosts } from "../../../lib/posts";
 
 type Props = {
   params: Promise<{
