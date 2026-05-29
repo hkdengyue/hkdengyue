@@ -15,7 +15,7 @@ From Semaglutide and Tirzepatide to the highly anticipated triple agonist Retatr
 
 Unlike traditional peptide drugs that mainly served niche therapeutic markets, GLP-1 products are targeting a massive global chronic disease population. As more patients begin using these therapies over long periods of time, the industry is facing a challenge it has never truly encountered before:
 
-## Industrial-scale peptide manufacturing.
+### Industrial-scale peptide manufacturing.
 
 In the past, discussions around the peptide sector focused primarily on innovative molecules, clinical development, and drug targets. Today, however, the core competition is gradually shifting toward a far more practical question:
 
@@ -29,13 +29,13 @@ At the same time, continuous flow synthesis, automated SPPS systems, and AI-driv
 
 ---
 
-# Why Is GLP-1 Reshaping the Entire Peptide Industry?
+## Why Is GLP-1 Reshaping the Entire Peptide Industry?
 
 For many years, peptide drugs were considered a highly specialized but relatively limited market. Traditional peptide therapeutics were mainly used in oncology, hormone therapies, and rare diseases, where patient populations remained relatively small.
 
 As a result, the industry traditionally operated under a:
 
-## “small-volume, high-value” manufacturing model.
+### “small-volume, high-value” manufacturing model.
 
 Under this model, peptide API companies focused primarily on complex molecule synthesis and ultra-high purity control, rather than large-scale commercial manufacturing capabilities.
 
@@ -65,7 +65,7 @@ Bachem has publicly stated that GLP-1 demand is driving a new expansion cycle fo
 
 ---
 
-# Why Are Global Peptide Companies Expanding So Aggressively?
+## Why Are Global Peptide Companies Expanding So Aggressively?
 
 As GLP-1 demand continues to surge, several major international peptide manufacturers have entered an unprecedented expansion phase.
 
@@ -87,15 +87,15 @@ In China, WuXi AppTec continues expanding the capabilities of its WuXi TIDES pla
 
 It is becoming increasingly clear that the global peptide industry is shifting from a phase of:
 
-## “R&D competition”
+### “R&D competition”
 
 into an era of:
 
-## “manufacturing competition.”
+### “manufacturing competition.”
 
 ---
 
-# Why Is “Industrial Manufacturing Capability” Becoming So Important?
+## Why Is “Industrial Manufacturing Capability” Becoming So Important?
 
 For many outside the industry, the value of GLP-1 drugs may seem to lie mainly in the products themselves.
 
@@ -109,7 +109,7 @@ Once market demand moves from R&D-scale production to global commercialization, 
 
 In other words, the peptide industry once resembled a form of:
 
-## “high-end laboratory manufacturing.”
+### “high-end laboratory manufacturing.”
 
 Today, it is rapidly evolving into a true advanced manufacturing industry.
 
@@ -127,7 +127,7 @@ This is also why increasing amounts of capital are flowing into peptide CDMO and
 
 ---
 
-# Conclusion
+## Conclusion
 
 The impact of GLP-1 extends far beyond the weight loss drug market itself.
 
