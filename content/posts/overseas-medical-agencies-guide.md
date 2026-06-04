@@ -8,7 +8,7 @@ image: "/images/concord-medical-center.png"
 
 # Are Overseas Medical Agencies Reliable? How to Choose a Reputable International Healthcare Service Provider
 
-![Concord Medical Center Reception](/images/concord-medical-center.jpg)
+![Concord Medical Center Reception](/images/concord-medical-center.png)
 
 As global healthcare becomes increasingly interconnected, cross-border medical care has become an important option for many patients seeking better treatment opportunities. Traditionally, overseas medical travel often meant destinations such as the United States, Japan, Germany, or Singapore. In recent years, however, a new trend has emerged: an increasing number of international patients are looking toward China for medical treatment.
 
