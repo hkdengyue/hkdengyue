@@ -1,7 +1,7 @@
 ---
 title: "Are Overseas Medical Agencies Reliable? How to Choose a Reputable International Healthcare Service Provider"
 date: "2026-06-04"
-category: "Medical Tourism"
+category: "medical-tourism"
 excerpt: "As cross-border healthcare becomes increasingly common, patients often rely on medical facilitators to navigate complex healthcare systems. Learn how to evaluate international healthcare service providers and why China is becoming a growing destination for medical treatment."
 image: "/images/concord-medical-center.png"
 ---
