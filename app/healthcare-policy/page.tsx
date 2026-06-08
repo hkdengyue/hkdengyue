@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+
+export const metadata: Metadata = {
+  title: "Healthcare Policy, Drug Regulation and Market Access",
+  description:
+    "Healthcare policy news covering drug regulation, market access, reimbursement, medical innovation policy, and global health system trends.",
+  alternates: {
+    canonical: "/healthcare-policy/",
+  },
+  openGraph: {
+    title: "Healthcare Policy, Drug Regulation and Market Access",
+    description:
+      "Healthcare policy news covering drug regulation, market access, reimbursement, medical innovation policy, and global health system trends.",
+    url: "/healthcare-policy/",
+  },
+};
 
 export default function HealthcarePolicyPage() {
   const posts = getPostsByCategory("healthcare-policy");

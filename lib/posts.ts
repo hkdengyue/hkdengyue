@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { DEFAULT_IMAGE } from "./site";
 
 const postsDirectory = path.join(
   process.cwd(),
@@ -29,6 +30,7 @@ export function getAllPosts() {
       title?: string;
       date?: string;
       summary?: string;
+      excerpt?: string;
       category?: string;
       image?: string;
     };
@@ -37,17 +39,19 @@ export function getAllPosts() {
       slug,
       title: data.title || "Untitled",
       date: data.date || "",
-      summary: data.summary || "",
+      summary: data.summary || data.excerpt || "",
       category: data.category || "biotech",
       image:
         data.image &&
         data.image.startsWith("/")
           ? data.image
-          : "/images/default.jpg",
+          : DEFAULT_IMAGE,
     };
   });
 
-  return posts;
+  return posts.sort((a, b) =>
+    b.date.localeCompare(a.date)
+  );
 }
 
 export function getPostsByCategory(
@@ -58,4 +62,40 @@ export function getPostsByCategory(
   return posts.filter(
     (post) => post.category === category
   );
+}
+
+export function getPostBySlug(slug: string) {
+  const fullPath = path.join(
+    postsDirectory,
+    `${slug}.md`
+  );
+
+  const fileContents = fs.readFileSync(
+    fullPath,
+    "utf8"
+  );
+
+  const matterResult = matter(fileContents);
+  const data = matterResult.data as {
+    title?: string;
+    date?: string;
+    summary?: string;
+    excerpt?: string;
+    category?: string;
+    image?: string;
+  };
+
+  return {
+    slug,
+    title: data.title || "Untitled",
+    date: data.date || "",
+    summary: data.summary || data.excerpt || "",
+    category: data.category || "biotech",
+    image:
+      data.image &&
+      data.image.startsWith("/")
+        ? data.image
+        : DEFAULT_IMAGE,
+    content: matterResult.content,
+  };
 }

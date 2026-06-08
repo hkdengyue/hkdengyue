@@ -1,17 +1,25 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+} from "../lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://med-news.pages.dev"),
+  metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "Global Medical News",
-    template: "%s | Global Medical News",
+    default: `${SITE_NAME} | Oncology, Biotech & Cross-Border Healthcare`,
+    template: `%s | ${SITE_NAME}`,
   },
 
-  description:
-    "Independent coverage of oncology, innovative drugs, biotechnology, medical tourism, rare diseases, healthcare policy, and global healthcare trends.",
+  description: DEFAULT_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
 
   keywords: [
     "medical news",
@@ -30,30 +38,28 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Global Medical News",
-    description:
-      "Independent coverage of oncology, innovative drugs, biotechnology, medical tourism, rare diseases, healthcare policy, and global healthcare trends.",
-    url: "https://med-news.pages.dev",
-    siteName: "Global Medical News",
+    title: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
 
     images: [
       {
-        url: "/images/default.png",
+        url: DEFAULT_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Global Medical News",
+        alt: SITE_NAME,
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Global Medical News",
-    description:
-      "Independent coverage of oncology, innovative drugs, biotechnology, medical tourism, rare diseases, healthcare policy, and global healthcare trends.",
-    images: ["/images/default.png"],
+    title: SITE_NAME,
+    description: DEFAULT_DESCRIPTION,
+    images: [DEFAULT_IMAGE],
   },
 
   robots: {
@@ -144,8 +150,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* Main Content */}
-        <main>{children}</main>
+        {children}
 
         {/* Footer */}
         <footer className="bg-black text-gray-400 py-12 mt-20">

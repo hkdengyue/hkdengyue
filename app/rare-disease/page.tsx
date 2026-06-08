@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+
+export const metadata: Metadata = {
+  title: "Rare Disease, Orphan Drugs and Genetic Disorders",
+  description:
+    "Rare disease coverage focused on orphan drugs, genetic disorders, diagnosis, treatment access, policy, and international therapy development.",
+  alternates: {
+    canonical: "/rare-disease/",
+  },
+  openGraph: {
+    title: "Rare Disease, Orphan Drugs and Genetic Disorders",
+    description:
+      "Rare disease coverage focused on orphan drugs, genetic disorders, diagnosis, treatment access, policy, and international therapy development.",
+    url: "/rare-disease/",
+  },
+};
 
 export default function RareDiseasePage() {
   const posts = getPostsByCategory("rare-disease");

@@ -6,8 +6,7 @@
 "dev": "next dev",
 "build": "next build",
 "start": "next start",
-"lint": "eslint",
-"postbuild": "next-sitemap || true"
+"lint": "eslint"
 },
 "dependencies": {
 "@tailwindcss/typography": "^0.5.19",

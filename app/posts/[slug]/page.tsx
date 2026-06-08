@@ -1,12 +1,17 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import type { Metadata } from "next";
 import { remark } from "remark";
 import html from "remark-html";
 import gfm from "remark-gfm";
 import Image from "next/image";
 import Link from "next/link";
-import { getAllPosts } from "../../../lib/posts";
+import {
+  getAllPosts,
+  getPostBySlug,
+} from "../../../lib/posts";
+import {
+  DEFAULT_IMAGE,
+  SITE_NAME,
+} from "../../../lib/site";
 
 type Props = {
   params: Promise<{
@@ -21,43 +26,61 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({
+  params,
+}: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  const url = `/posts/${slug}/`;
+
+  return {
+    title: post.title,
+    description: post.summary,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      url,
+      siteName: SITE_NAME,
+      type: "article",
+      publishedTime: post.date,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.summary,
+      images: [post.image],
+    },
+  };
+}
+
 export default async function PostPage({
   params,
 }: Props) {
   const { slug } = await params;
-
-  const fullPath = path.join(
-    process.cwd(),
-    "content/posts",
-    `${slug}.md`
-  );
-
-  const fileContents = fs.readFileSync(
-    fullPath,
-    "utf8"
-  );
-
-  const matterResult = matter(fileContents);
+  const post = getPostBySlug(slug);
 
   const processedContent = await remark()
     .use(gfm)
     .use(html)
-    .process(matterResult.content);
+    .process(post.content);
 
-  const contentHtml =
-    processedContent.toString();
+  const contentHtml = processedContent
+    .toString()
+    .replace(/<h1/g, "<h2")
+    .replace(/<\/h1>/g, "</h2>");
 
-  const image =
-    matterResult.data.image &&
-    matterResult.data.image.startsWith("/")
-      ? matterResult.data.image
-      : "/images/default.jpg";
-
-  // Current Category
-  const currentCategory =
-    matterResult.data.category;
-
-  // Related Posts
+  const currentCategory = post.category;
   const relatedPosts = getAllPosts()
     .filter(
       (post) =>
@@ -79,18 +102,18 @@ export default async function PostPage({
           </p>
 
           <h1 className="text-6xl font-black leading-tight mb-8">
-            {matterResult.data.title}
+            {post.title}
           </h1>
 
           <div className="flex flex-wrap items-center gap-6 text-cyan-100 text-lg">
 
             <span>
               Published:{" "}
-              {matterResult.data.date}
+              {post.date}
             </span>
 
             <span>
-              {matterResult.data.category}
+              {post.category}
             </span>
 
           </div>
@@ -105,8 +128,8 @@ export default async function PostPage({
         <div className="relative h-[500px] rounded-[2rem] overflow-hidden shadow-2xl">
 
           <Image
-            src={image}
-            alt={matterResult.data.title}
+            src={post.image}
+            alt={post.title}
             fill
             className="object-cover"
             priority
@@ -125,7 +148,7 @@ export default async function PostPage({
           <div className="border-l-4 border-blue-600 pl-6 mb-12">
 
             <p className="text-2xl text-gray-700 leading-relaxed">
-              {matterResult.data.summary}
+              {post.summary}
             </p>
 
           </div>
@@ -179,7 +202,7 @@ export default async function PostPage({
                       post.image &&
                       post.image.startsWith("/")
                         ? post.image
-                        : "/images/default.jpg"
+                        : DEFAULT_IMAGE
                     }
                     alt={post.title}
                     fill

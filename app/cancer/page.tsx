@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+
+export const metadata: Metadata = {
+  title: "Cancer Research, Immunotherapy and Precision Oncology",
+  description:
+    "Latest cancer research coverage on CAR-T therapy, immunotherapy, precision oncology, treatment access, and global oncology innovation.",
+  alternates: {
+    canonical: "/cancer/",
+  },
+  openGraph: {
+    title: "Cancer Research, Immunotherapy and Precision Oncology",
+    description:
+      "Latest cancer research coverage on CAR-T therapy, immunotherapy, precision oncology, treatment access, and global oncology innovation.",
+    url: "/cancer/",
+  },
+};
 
 export default function CancerPage() {
   const posts = getPostsByCategory("cancer");

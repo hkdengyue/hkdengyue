@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+
+export const metadata: Metadata = {
+  title: "Innovative Drugs, ADC, CAR-T and GLP-1 News",
+  description:
+    "Coverage of innovative drugs, ADCs, CAR-T therapies, GLP-1 medicines, peptide APIs, clinical research, and global drug development.",
+  alternates: {
+    canonical: "/innovative-drugs/",
+  },
+  openGraph: {
+    title: "Innovative Drugs, ADC, CAR-T and GLP-1 News",
+    description:
+      "Coverage of innovative drugs, ADCs, CAR-T therapies, GLP-1 medicines, peptide APIs, clinical research, and global drug development.",
+    url: "/innovative-drugs/",
+  },
+};
 
 export default function InnovativeDrugsPage() {
   const posts = getPostsByCategory("innovative-drugs");

@@ -1,5 +1,21 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "../lib/posts";
+import { DEFAULT_DESCRIPTION } from "../lib/site";
+
+export const metadata: Metadata = {
+  title: "Medical Innovation, Oncology & Biotech News",
+  description: DEFAULT_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Medical Innovation, Oncology & Biotech News",
+    description: DEFAULT_DESCRIPTION,
+    url: "/",
+  },
+};
 
 export default function Home() {
   const posts = getAllPosts();
@@ -15,10 +31,10 @@ export default function Home() {
             International Healthcare & Biotech Media
           </p>
 
-          <h2 className="text-6xl font-bold max-w-4xl leading-tight mb-6">
+          <h1 className="text-6xl font-bold max-w-4xl leading-tight mb-6">
             Covering Global Medical Innovation,
             Cancer Therapy, and Cross-Border Healthcare
-          </h2>
+          </h1>
 
           <p className="text-xl text-blue-100 max-w-2xl">
             Insights into China innovative drugs,
@@ -49,11 +65,14 @@ export default function Home() {
               className="bg-white rounded-3xl overflow-hidden shadow hover:shadow-2xl transition duration-300"
             >
 
-              <img
-  src={post.image}
-  alt={post.title}
-  className="h-56 w-full object-cover"
-/>
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={800}
+                height={450}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="h-56 w-full object-cover"
+              />
 
               <div className="p-8">
 

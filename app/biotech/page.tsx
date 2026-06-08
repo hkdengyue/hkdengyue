@@ -1,6 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+
+export const metadata: Metadata = {
+  title: "Biotech Intelligence and Pharmaceutical Innovation",
+  description:
+    "Biotech news and analysis covering pharmaceutical innovation, clinical progress, biologics, cell therapy, ADCs, and China biopharma trends.",
+  alternates: {
+    canonical: "/biotech/",
+  },
+  openGraph: {
+    title: "Biotech Intelligence and Pharmaceutical Innovation",
+    description:
+      "Biotech news and analysis covering pharmaceutical innovation, clinical progress, biologics, cell therapy, ADCs, and China biopharma trends.",
+    url: "/biotech/",
+  },
+};
 
 export default function BiotechPage() {
   const posts = getPostsByCategory("biotech");
