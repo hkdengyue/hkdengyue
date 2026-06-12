@@ -3,7 +3,7 @@ title: "Behind New Indication Approvals: How Drug Accessibility and Supply Chain
 date: "2026-06-12"
 excerpt: "Drug repurposing is reshaping pharmaceutical markets worldwide. Discover how new indication approvals affect drug accessibility, patient demand, supply chain planning, and global healthcare delivery."
 category: "innovative-drugs"
-coverImage: "/images/drug-repurposing-supply-chain-accessibility-cover.png"
+image: "/images/drug-repurposing-supply-chain-accessibility-cover.png"
 author: "DengYueMed"
 tags:
   - Drug Repurposing
