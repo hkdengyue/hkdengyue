@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+import { DEFAULT_IMAGE } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Cancer Research, Immunotherapy and Precision Oncology",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Latest cancer research coverage on CAR-T therapy, immunotherapy, precision oncology, treatment access, and global oncology innovation.",
     url: "/cancer/",
+    images: [DEFAULT_IMAGE],
   },
 };
 

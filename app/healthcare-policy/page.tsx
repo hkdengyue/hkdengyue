@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+import { DEFAULT_IMAGE } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Healthcare Policy, Drug Regulation and Market Access",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Healthcare policy news covering drug regulation, market access, reimbursement, medical innovation policy, and global health system trends.",
     url: "/healthcare-policy/",
+    images: [DEFAULT_IMAGE],
   },
 };
 

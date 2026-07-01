@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getAllPosts } from "../lib/posts";
-import { DEFAULT_DESCRIPTION } from "../lib/site";
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_IMAGE,
+} from "../lib/site";
 
 export const metadata: Metadata = {
   title: "Medical Innovation, Oncology & Biotech News",
@@ -14,6 +17,7 @@ export const metadata: Metadata = {
     title: "Medical Innovation, Oncology & Biotech News",
     description: DEFAULT_DESCRIPTION,
     url: "/",
+    images: [DEFAULT_IMAGE],
   },
 };
 

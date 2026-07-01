@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+import { DEFAULT_IMAGE } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Medical Tourism and International Patient Care in China",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Guides and news for international patients seeking treatment in China, including hospital access, insurance, oncology care, and cross-border medical services.",
     url: "/medical-tourism/",
+    images: [DEFAULT_IMAGE],
   },
 };
 

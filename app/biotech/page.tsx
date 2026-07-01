@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+import { DEFAULT_IMAGE } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Biotech Intelligence and Pharmaceutical Innovation",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Biotech news and analysis covering pharmaceutical innovation, clinical progress, biologics, cell therapy, ADCs, and China biopharma trends.",
     url: "/biotech/",
+    images: [DEFAULT_IMAGE],
   },
 };
 

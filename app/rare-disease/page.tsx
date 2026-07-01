@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+import { DEFAULT_IMAGE } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Rare Disease, Orphan Drugs and Genetic Disorders",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Rare disease coverage focused on orphan drugs, genetic disorders, diagnosis, treatment access, policy, and international therapy development.",
     url: "/rare-disease/",
+    images: [DEFAULT_IMAGE],
   },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostsByCategory } from "../../lib/posts";
+import { DEFAULT_IMAGE } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "Innovative Drugs, ADC, CAR-T and GLP-1 News",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Coverage of innovative drugs, ADCs, CAR-T therapies, GLP-1 medicines, peptide APIs, clinical research, and global drug development.",
     url: "/innovative-drugs/",
+    images: [DEFAULT_IMAGE],
   },
 };
 
