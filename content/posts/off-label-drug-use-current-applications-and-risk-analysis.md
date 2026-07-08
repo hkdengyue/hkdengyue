@@ -3,7 +3,7 @@ title: "What Is Off-Label Drug Use? Current Applications and Risk Analysis"
 date: "2026-06-09"
 category: "innovative-drugs"
 excerpt: "Off-label drug use has become increasingly common in oncology, rare diseases, pediatrics, and precision medicine. Understanding its benefits, risks, and regulatory framework can help patients make more informed treatment decisions."
-image: "/images/off-label-drug-use-risk-analysis.png"
+image: "/medical-news-site/images/off-label-drug-use-risk-analysis.png"
 author: "DengYue Medical"
 featured: false
 ---

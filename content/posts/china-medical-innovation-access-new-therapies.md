@@ -2,7 +2,7 @@
 title: "China’s Rapidly Advancing Medical Innovation: How Patients Can Access New Therapies"
 date: "2026-06-05"
 category: "medical-tourism"
-image: "/images/china-medical-innovation-access.png"
+image: "/medical-news-site/images/china-medical-innovation-access.png"
 summary: "China's healthcare innovation sector is expanding rapidly, bringing new opportunities for patients to access innovative medicines, cell and gene therapies, precision medicine, and cutting-edge clinical research."
 ---
 

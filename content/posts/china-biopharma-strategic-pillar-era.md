@@ -3,7 +3,7 @@ title: "China’s Biopharmaceutical Industry Enters a Strategic Pillar Era"
 date: "2026-05-21"
 summary: "China’s biopharmaceutical industry is entering a new phase driven by policy reform, innovation, and global expansion."
 category: "biotech"
-image: "/images/strategic-pillar-era.jpg"
+image: "/medical-news-site/images/strategic-pillar-era.jpg"
 ---
 
 # China’s Biopharmaceutical Industry Enters a “Strategic Pillar” Era: A Structural Shift Driven by Policy, Innovation, and Capital

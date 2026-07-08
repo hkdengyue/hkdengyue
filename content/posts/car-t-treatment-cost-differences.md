@@ -3,12 +3,12 @@ title: "Why Can CAR-T Treatment Costs Differ by Hundreds of Thousands of Dollars
 date: "2026-06-04"
 category: "cancer"
 excerpt: "CAR-T therapy is transforming cancer treatment, but costs can vary dramatically between countries, hospitals, and products. Learn what drives the price differences and how patients can make informed decisions."
-image: "/images/car-t-treatment-cost-differences.png"
+image: "/medical-news-site/images/car-t-treatment-cost-differences.png"
 ---
 
 # Why Can CAR-T Treatment Costs Differ by Hundreds of Thousands of Dollars?
 
-![CAR-T Manufacturing Process](/images/car-t-treatment-cost-differences.png)
+![CAR-T Manufacturing Process](/medical-news-site/images/car-t-treatment-cost-differences.png)
 
 In recent years, **CAR-T cell therapy (Chimeric Antigen Receptor T-cell Therapy)** has become one of the most significant breakthroughs in cancer treatment. For patients with relapsed or refractory leukemia, lymphoma, and multiple myeloma, CAR-T therapy has offered new hope when conventional treatments have failed.
 

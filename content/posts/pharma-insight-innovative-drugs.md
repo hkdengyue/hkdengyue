@@ -3,7 +3,7 @@ title: "Pharma Insight: Intensifying Competition in Innovative Drugs Driven by P
 date: "2026-05-20"
 summary: "China’s innovative drugs sector is accelerating global collaboration through policy support, clinical progress, and expanding outbound licensing activity."
 category: "biotech"
-image: "/images/pharma-insight.jpg"
+image: "/medical-news-site/images/pharma-insight.jpg"
 ---
 
 # Pharma Insight: Intensifying Competition in Innovative Drugs Driven by Policy and Clinical Progress

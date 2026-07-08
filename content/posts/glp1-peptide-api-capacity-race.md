@@ -3,7 +3,7 @@
 title: "The Global GLP-1 Capacity Race: Why the Peptide API Industry Is Entering the Industrialization Era"
 date: "2026-05-28"
 summary: "As global demand for GLP-1 therapies surges, the peptide API industry is rapidly transitioning from small-scale synthesis to industrialized manufacturing."
-image: "/images/glp1-capacity-race.png"
+image: "/medical-news-site/images/glp1-capacity-race.png"
 category: "biotech"
 -------------------
 
@@ -39,7 +39,7 @@ As a result, the industry traditionally operated under a:
 
 Under this model, peptide API companies focused primarily on complex molecule synthesis and ultra-high purity control, rather than large-scale commercial manufacturing capabilities.
 
-![WuXi AppTec GLP-1 Manufacturing](/images/wuxi-glp1.png)
+![WuXi AppTec GLP-1 Manufacturing](/medical-news-site/images/wuxi-glp1.png)
 
 The rise of GLP-1 drugs has fundamentally changed this logic.
 

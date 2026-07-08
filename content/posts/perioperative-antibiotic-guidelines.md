@@ -11,10 +11,10 @@ summary: "A comprehensive review of perioperative antibiotic prophylaxis, includ
 
 author: "DengYueMed"
 
-coverImage: "/images/perioperative-antibiotic-guidelines.png"
+coverImage: "/medical-news-site/images/perioperative-antibiotic-guidelines.png"
 
 images:
-  - "/images/perioperative-antibiotic-guidelines.png"
+  - "/medical-news-site/images/perioperative-antibiotic-guidelines.png"
 
 tags:
   - Antibiotics
@@ -28,7 +28,7 @@ tags:
 
 # Perioperative Antibiotic Guidelines: Rational Drug Selection and Duration Control
 
-![Perioperative Antibiotic Guidelines](/images/perioperative-antibiotic-guidelines.png)
+![Perioperative Antibiotic Guidelines](/medical-news-site/images/perioperative-antibiotic-guidelines.png)
 
 Surgical Site Infection (SSI) is one of the most common complications during the perioperative period. It not only prolongs hospital stay and increases medical costs but may also affect surgical outcomes and even endanger patients’ lives.
 
