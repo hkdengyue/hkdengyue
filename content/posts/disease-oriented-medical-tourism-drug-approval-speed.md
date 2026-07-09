@@ -3,12 +3,12 @@ title: "The Era of Disease-Oriented Medical Tourism: How Drug Approval Speed Inf
 date: "2026-07-03"
 category: "medical-tourism"
 excerpt: "As innovative drug R&D and precision medicine accelerate, drug approval speed is becoming a critical factor for international patients, shifting the focus from hospital reputation to rapid access to life-saving therapies."
-image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663505077088/hNjDrqfyDlvbfkjN.jpg"
+image: "/images/hNjDrqfyDlvbfkjN.jpg"
 ---
 
 # The Era of Disease-Oriented Medical Tourism: How Drug Approval Speed Influences Patient Choice
 
-![Medical Tourism Concept](https://files.manuscdn.com/user_upload_by_module/session_file/310519663505077088/hNjDrqfyDlvbfkjN.jpg)
+![Medical Tourism Concept](/images/hNjDrqfyDlvbfkjN.jpg)
 
 In recent years, the global medical tourism market has been undergoing profound changes. In the past, when international patients chose to seek medical care abroad, they tended to prioritize hospital rankings, the reputation of specialists, and the overall medical environment. However, with the rapid development of innovative drug research and precision medicine technologies, the decision-making logic of patients is quietly shifting. For patients with cancer, rare diseases, and certain chronic conditions, the time it takes to access advanced treatment options is becoming increasingly important, and drug approval speed is gradually becoming a key factor influencing patients' choices to seek medical care across borders.
 
