@@ -11,6 +11,8 @@ summary: "A comprehensive review of perioperative antibiotic prophylaxis, includ
 
 author: "DengYueMed"
 
+coverImage: "/images/perioperative-antibiotic-guidelines.png"
+
 images:
   - "/images/perioperative-antibiotic-guidelines.png"
 
