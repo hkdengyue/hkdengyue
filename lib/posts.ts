@@ -17,23 +17,7 @@ export interface Post {
   image: string;
 }
 
-function normalizeCategory(
-  category: unknown
-): string[] {
-  if (Array.isArray(category)) {
-    return category.map((c) => String(c).toLowerCase());
-  }
-
-  if (typeof category === "string") {
-    return [category.toLowerCase()];
-  }
-
-  return ["biotech"];
-}
-
-function normalizeDate(
-  date: unknown
-): string {
+function normalizeDate(date: unknown): string {
   if (!date) return "";
 
   if (date instanceof Date) {
@@ -43,54 +27,98 @@ function normalizeDate(
   return String(date);
 }
 
+function normalizeCategory(category: unknown): string[] {
+  if (Array.isArray(category)) {
+    return category.map((item) =>
+      String(item).trim().toLowerCase()
+    );
+  }
+
+  if (typeof category === "string") {
+    return [category.trim().toLowerCase()];
+  }
+
+  return ["biotech"];
+}
+
+function normalizeImage(image: unknown): string {
+  if (
+    typeof image === "string" &&
+    image.startsWith("/")
+  ) {
+    return image;
+  }
+
+  return DEFAULT_IMAGE;
+}
+
+function normalizeSummary(
+  summary: unknown,
+  excerpt: unknown
+): string {
+  if (
+    typeof summary === "string" &&
+    summary.trim().length > 0
+  ) {
+    return summary.trim();
+  }
+
+  if (
+    typeof excerpt === "string" &&
+    excerpt.trim().length > 0
+  ) {
+    return excerpt.trim();
+  }
+
+  return "";
+}
+
 export function getAllPosts(): Post[] {
-  const fileNames = fs.readdirSync(postsDirectory);
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
 
-  const posts = fileNames
-    .filter((file) => file.endsWith(".md"))
-    .map((fileName) => {
-      const slug = fileName.replace(".md", "");
+  const fileNames = fs
+    .readdirSync(postsDirectory)
+    .filter((file) => file.endsWith(".md"));
 
-      const fullPath = path.join(
-        postsDirectory,
-        fileName
-      );
+  const posts = fileNames.map((fileName) => {
+    const slug = fileName.replace(/\.md$/, "");
 
-      const fileContents = fs.readFileSync(
-        fullPath,
-        "utf8"
-      );
+    const fullPath = path.join(
+      postsDirectory,
+      fileName
+    );
 
-      const { data } = matter(fileContents);
+    const fileContents = fs.readFileSync(
+      fullPath,
+      "utf8"
+    );
 
-      return {
-        slug,
+    const { data } = matter(fileContents);
 
-        title:
-          typeof data.title === "string"
-            ? data.title
-            : "Untitled",
+    return {
+      slug,
 
-        date: normalizeDate(data.date),
+      title:
+        typeof data.title === "string"
+          ? data.title
+          : "Untitled",
 
-        summary:
-          typeof data.summary === "string"
-            ? data.summary
-            : typeof data.excerpt === "string"
-            ? data.excerpt
-            : "",
+      date: normalizeDate(data.date),
 
-        category: normalizeCategory(
-          data.category
-        ),
+      summary: normalizeSummary(
+        data.summary,
+        data.excerpt
+      ),
 
-        image:
-          typeof data.image === "string" &&
-          data.image.startsWith("/")
-            ? data.image
-            : DEFAULT_IMAGE,
-      };
-    });
+      category: normalizeCategory(
+        data.category
+      ),
+
+      image: normalizeImage(data.image),
+    };
+  });
 
   return posts.sort(
     (a, b) =>
@@ -101,7 +129,7 @@ export function getAllPosts(): Post[] {
 
 export function getPostsByCategory(
   category: string
-) {
+): Post[] {
   const target = category.toLowerCase();
 
   return getAllPosts().filter((post) =>
@@ -133,22 +161,16 @@ export function getPostBySlug(slug: string) {
 
     date: normalizeDate(data.date),
 
-    summary:
-      typeof data.summary === "string"
-        ? data.summary
-        : typeof data.excerpt === "string"
-        ? data.excerpt
-        : "",
+    summary: normalizeSummary(
+      data.summary,
+      data.excerpt
+    ),
 
     category: normalizeCategory(
       data.category
     ),
 
-    image:
-      typeof data.image === "string" &&
-      data.image.startsWith("/")
-        ? data.image
-        : DEFAULT_IMAGE,
+    image: normalizeImage(data.image),
 
     content,
   };
