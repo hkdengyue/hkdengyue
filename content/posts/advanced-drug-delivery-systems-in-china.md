@@ -1,7 +1,7 @@
 ---
 title: "Beyond Tablets and Infusions: Advanced Drug Delivery Systems in China"
 date: 2026-07-09
-category: innovative drugs
+category: innovative-drugs
 tags:
   - Drug Delivery
   - Liposome
