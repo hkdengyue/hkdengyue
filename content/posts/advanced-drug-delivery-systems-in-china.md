@@ -13,12 +13,12 @@ tags:
   - Innovative Drugs
 excerpt: "Explore how China's advanced drug delivery technologies—including liposomes, nanomedicine, microneedle patches, transdermal systems, sustained-release implants, and inhalation formulations—are transforming modern therapeutics beyond traditional tablets and infusions."
 summary: "Advanced drug delivery systems are reshaping pharmaceutical innovation by improving targeting, bioavailability, patient adherence, and long-term therapeutic outcomes. This article reviews six major drug delivery technologies driving China's next generation of innovative medicines."
-image: /images/blog/advanced-drug-delivery-systems-in-china-1.png
+image: /images/advanced-drug-delivery-systems-in-china-1.png
 ---
 
 # Beyond Tablets and Infusions: Advanced Drug Delivery Systems in China
 
-![Advanced Drug Delivery Systems in China](/images/blog/advanced-drug-delivery-systems-in-china-1.png)
+![Advanced Drug Delivery Systems in China](/images/advanced-drug-delivery-systems-in-china-1.png)
 
 For decades, oral tablets and injectable infusions have dominated clinical medicine. While these conventional dosage forms remain indispensable, they are not always able to deliver drugs precisely where they are needed, maintain optimal therapeutic concentrations, or maximize patient adherence.
 
