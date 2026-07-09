@@ -32,7 +32,7 @@ As a [global pharmaceutical distributor](https://dengyuemed.com/) with long-stan
 
 ---
 
-# SMA Treatment Landscape: From Supportive Care to Disease Modification
+## SMA Treatment Landscape: From Supportive Care to Disease Modification
 
 Historically, SMA management relied primarily on supportive care, including respiratory support, nutritional management, and physical rehabilitation.
 
@@ -52,11 +52,11 @@ These therapies have significantly altered the natural history of SMA and made e
 
 ---
 
-# Global Treatment Accessibility: A Highly Uneven Reality
+## Global Treatment Accessibility: A Highly Uneven Reality
 
 Despite therapeutic advances, global access to SMA treatment remains clearly stratified.
 
-## 1. High-income countries: relatively high access but reimbursement-dependent
+### 1. High-income countries: relatively high access but reimbursement-dependent
 
 In the United States, parts of Europe, and Japan:
 
@@ -65,7 +65,7 @@ In the United States, parts of Europe, and Japan:
 - High-cost therapies rely heavily on insurance coverage or special funding programs.
 - Access to gene therapies such as Zolgensma remains constrained by reimbursement policies.
 
-## 2. Middle-income countries: limited access with significant regional disparities
+### 2. Middle-income countries: limited access with significant regional disparities
 
 In parts of Asia and Latin America:
 
@@ -74,7 +74,7 @@ In parts of Asia and Latin America:
 - Gene therapy remains largely inaccessible.
 - Insurance reimbursement levels are inconsistent and often insufficient.
 
-## 3. Low-income countries: persistent treatment gaps
+### 3. Low-income countries: persistent treatment gaps
 
 In many regions of Africa and other developing areas:
 
@@ -85,7 +85,7 @@ In many regions of Africa and other developing areas:
 
 ---
 
-# Key Drivers of Limited Access: Multi-System Barriers
+## Key Drivers of Limited Access: Multi-System Barriers
 
 The accessibility challenges in SMA treatment are not driven by a single factor but rather by multiple systemic barriers.
 
@@ -99,7 +99,7 @@ These factors collectively create a situation in which therapies may exist but r
 
 ---
 
-# Global Trends: Gradual Improvement in Accessibility
+## Global Trends: Gradual Improvement in Accessibility
 
 ![Global Pharmaceutical Distribution Network](/images/global-accessibility-of-sma-treatment-03.png)
 
@@ -117,7 +117,7 @@ Although considerable disparities remain, these developments indicate that globa
 
 ---
 
-# From Innovation to Access: The Role of Global Distribution Systems
+## From Innovation to Access: The Role of Global Distribution Systems
 
 ![Global Pharmaceutical Supply Chain](/images/global-accessibility-of-sma-treatment-04.png)
 
@@ -138,7 +138,7 @@ Strengthening international collaboration among manufacturers, regulators, healt
 
 ---
 
-# Conclusion
+## Conclusion
 
 The evolution of SMA treatment demonstrates that modern medicine can profoundly alter the natural course of rare neuromuscular diseases. However, global treatment equity remains an ongoing challenge.
 
@@ -152,7 +152,7 @@ DengYueMed remains committed to monitoring advances in rare disease therapies an
 
 ---
 
-## Related Reading
+### Related Reading
 
 If you are interested in the latest advances in spinal muscular atrophy, you may also enjoy:
 
