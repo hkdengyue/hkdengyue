@@ -8,59 +8,104 @@ const postsDirectory = path.join(
   "content/posts"
 );
 
-export function getAllPosts() {
+export interface Post {
+  slug: string;
+  title: string;
+  date: string;
+  summary: string;
+  category: string[];
+  image: string;
+}
+
+function normalizeCategory(
+  category: unknown
+): string[] {
+  if (Array.isArray(category)) {
+    return category.map((c) => String(c).toLowerCase());
+  }
+
+  if (typeof category === "string") {
+    return [category.toLowerCase()];
+  }
+
+  return ["biotech"];
+}
+
+function normalizeDate(
+  date: unknown
+): string {
+  if (!date) return "";
+
+  if (date instanceof Date) {
+    return date.toISOString().split("T")[0];
+  }
+
+  return String(date);
+}
+
+export function getAllPosts(): Post[] {
   const fileNames = fs.readdirSync(postsDirectory);
 
-  const posts = fileNames.map((fileName) => {
-    const slug = fileName.replace(".md", "");
+  const posts = fileNames
+    .filter((file) => file.endsWith(".md"))
+    .map((fileName) => {
+      const slug = fileName.replace(".md", "");
 
-    const fullPath = path.join(
-      postsDirectory,
-      fileName
-    );
+      const fullPath = path.join(
+        postsDirectory,
+        fileName
+      );
 
-    const fileContents = fs.readFileSync(
-      fullPath,
-      "utf8"
-    );
+      const fileContents = fs.readFileSync(
+        fullPath,
+        "utf8"
+      );
 
-    const matterResult = matter(fileContents);
+      const { data } = matter(fileContents);
 
-    const data = matterResult.data as {
-      title?: string;
-      date?: string;
-      summary?: string;
-      excerpt?: string;
-      category?: string;
-      image?: string;
-    };
+      return {
+        slug,
 
-    return {
-      slug,
-      title: data.title || "Untitled",
-      date: data.date || "",
-      summary: data.summary || data.excerpt || "",
-      category: data.category || "biotech",
-      image:
-        data.image &&
-        data.image.startsWith("/")
-          ? data.image
-          : DEFAULT_IMAGE,
-    };
-  });
+        title:
+          typeof data.title === "string"
+            ? data.title
+            : "Untitled",
 
-  return posts.sort((a, b) =>
-    b.date.localeCompare(a.date)
+        date: normalizeDate(data.date),
+
+        summary:
+          typeof data.summary === "string"
+            ? data.summary
+            : typeof data.excerpt === "string"
+            ? data.excerpt
+            : "",
+
+        category: normalizeCategory(
+          data.category
+        ),
+
+        image:
+          typeof data.image === "string" &&
+          data.image.startsWith("/")
+            ? data.image
+            : DEFAULT_IMAGE,
+      };
+    });
+
+  return posts.sort(
+    (a, b) =>
+      new Date(b.date).getTime() -
+      new Date(a.date).getTime()
   );
 }
 
 export function getPostsByCategory(
   category: string
 ) {
-  const posts = getAllPosts();
+  const target = category.toLowerCase();
 
-  return posts.filter(
-    (post) => post.category === category
+  return getAllPosts().filter((post) =>
+    post.category.includes(target)
   );
 }
 
@@ -75,27 +120,36 @@ export function getPostBySlug(slug: string) {
     "utf8"
   );
 
-  const matterResult = matter(fileContents);
-  const data = matterResult.data as {
-    title?: string;
-    date?: string;
-    summary?: string;
-    excerpt?: string;
-    category?: string;
-    image?: string;
-  };
+  const { data, content } =
+    matter(fileContents);
 
   return {
     slug,
-    title: data.title || "Untitled",
-    date: data.date || "",
-    summary: data.summary || data.excerpt || "",
-    category: data.category || "biotech",
+
+    title:
+      typeof data.title === "string"
+        ? data.title
+        : "Untitled",
+
+    date: normalizeDate(data.date),
+
+    summary:
+      typeof data.summary === "string"
+        ? data.summary
+        : typeof data.excerpt === "string"
+        ? data.excerpt
+        : "",
+
+    category: normalizeCategory(
+      data.category
+    ),
+
     image:
-      data.image &&
+      typeof data.image === "string" &&
       data.image.startsWith("/")
         ? data.image
         : DEFAULT_IMAGE,
-    content: matterResult.content,
+
+    content,
   };
 }
