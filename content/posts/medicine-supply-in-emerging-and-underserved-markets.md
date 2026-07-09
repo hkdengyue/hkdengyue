@@ -8,11 +8,11 @@ tags:
   - underserved markets
   - medicine distribution
   - healthcare equity
-image: "/medical-news-site/images/pharmaceutical-accessibility-in-underserved-markets.png"
+image: "/images/pharmaceutical-accessibility-in-underserved-markets.png"
 excerpt: "As healthcare resources expand into underserved regions worldwide, pharmaceutical companies face both significant opportunities and complex challenges in improving medicine accessibility, strengthening supply chains, and supporting healthcare equity."
 ---
 
-![Opportunities and Challenges in Supplying Medicines to Emerging and Underserved Markets](/medical-news-site/images/pharmaceutical-accessibility-in-underserved-markets.png)
+![Opportunities and Challenges in Supplying Medicines to Emerging and Underserved Markets](/images/pharmaceutical-accessibility-in-underserved-markets.png)
 
 # Opportunities and Challenges in Supplying Medicines to Emerging and Underserved Markets: A New Growth Engine for the Global Pharmaceutical Industry
 

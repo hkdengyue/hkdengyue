@@ -60,7 +60,7 @@ export default function BiotechPage() {
               <div className="relative h-[450px]">
 
                 <Image
-                  src={featuredPost?.image || "/medical-news-site/images/default.jpg"}
+                  src={featuredPost?.image || "/images/default.jpg"}
                   alt={featuredPost?.title || "Medical News"}
                   fill
                   className="object-cover"
@@ -173,7 +173,7 @@ export default function BiotechPage() {
               <div className="relative lg:w-72 h-52 rounded-2xl overflow-hidden flex-shrink-0">
 
                 <Image
-                  src={post.image || "/medical-news-site/images/default.jpg"}
+                  src={post.image || "/images/default.jpg"}
                   alt={post.title || "Medical News"}
                   fill
                   className="object-cover"

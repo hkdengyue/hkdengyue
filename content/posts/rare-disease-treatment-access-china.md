@@ -3,7 +3,7 @@ title: "Accelerated Upgrade of International Healthcare: Breaking Barriers to Ac
 date: "2026-06-08"
 category: "rare-disease"
 excerpt: "Advances in gene therapy, RNA-targeted therapies, and enzyme replacement treatments are transforming rare disease care worldwide. Learn how international healthcare services are helping patients access innovative therapies and global medical resources."
-image: "/medical-news-site/images/rare-disease-treatment-access-china.png"
+image: "/images/rare-disease-treatment-access-china.png"
 tags:
   - Rare Disease
   - Orphan Drugs
@@ -17,7 +17,7 @@ tags:
 
 # Accelerated Upgrade of International Healthcare: Breaking Barriers to Access for Cutting-Edge Rare Disease Treatments
 
-![International Healthcare and Rare Disease Treatment](/medical-news-site/images/rare-disease-treatment-access-china.png)
+![International Healthcare and Rare Disease Treatment](/images/rare-disease-treatment-access-china.png)
 
 In recent years, the [global biopharmaceutical](https://med-news.pages.dev/) and precision medicine industries have experienced rapid growth. Breakthrough innovations in gene therapy, RNA-targeted therapies, enzyme replacement therapies, and other advanced technologies have transformed the diagnosis and treatment landscape for complex and rare diseases. As numerous orphan drugs continue to gain approval across major pharmaceutical markets such as the United States, Europe, and Japan, rare disease treatment has entered a new era driven by innovation.
 

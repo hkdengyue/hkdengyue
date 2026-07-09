@@ -2,7 +2,7 @@
 title: "Why Are More and More Pharmaceutical Companies Worldwide Beginning to Rely on China's Peptide Production Capacity?"
 date: "2026-05-29"
 summary: "As GLP-1 demand explodes globally, China is rapidly becoming one of the world’s most important peptide manufacturing hubs."
-image: "/medical-news-site/images/china-glp1-capacity.png"
+image: "/images/china-glp1-capacity.png"
 category: "biotech"
 ---
 

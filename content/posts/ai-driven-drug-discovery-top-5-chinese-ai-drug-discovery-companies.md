@@ -9,10 +9,10 @@ excerpt: "Discover the five leading Chinese AI drug discovery companies transfor
 
 description: "Explore the top Chinese AI drug discovery companies transforming pharmaceutical innovation through artificial intelligence, machine learning, generative AI, robotics, and computational biology."
 
-image: "/medical-news-site/images/ai-drug-discovery-china-cover.png"
+image: "/images/ai-drug-discovery-china-cover.png"
 ---
 
-![AI Drug Discovery](/medical-news-site/images/ai-drug-discovery-china-cover.png)
+![AI Drug Discovery](/images/ai-drug-discovery-china-cover.png)
 
 # AI-Driven Drug Discovery: Top 5 Chinese AI Drug Discovery Companies
 
@@ -59,7 +59,7 @@ Investors are no longer focused solely on AI platforms themselves, but increasin
 
 ---
 
-![China AI Drug Discovery Ecosystem](/medical-news-site/images/china-ai-drug-discovery-ecosystem.png)
+![China AI Drug Discovery Ecosystem](/images/china-ai-drug-discovery-ecosystem.png)
 
 ## Top 5 Chinese AI Drug Discovery Companies
 

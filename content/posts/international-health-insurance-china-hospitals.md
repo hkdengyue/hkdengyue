@@ -4,7 +4,7 @@ date: "2026-06-02"
 excerpt: "Learn which international health insurance providers are accepted by Chinese hospitals, how direct billing works, and what overseas patients should know before seeking medical treatment in China."
 category: "medical-tourism"
 author: "DengYueMed"
-image: "/medical-news-site/images/international-health-insurance-china.png"
+image: "/images/international-health-insurance-china.png"
 ---
 
 # Which International Health Insurance Plans Are Accepted by Chinese Hospitals? A Guide for Overseas Patients Seeking Treatment in China
@@ -19,7 +19,7 @@ The answer is: **In many cases, yes—but it depends on the insurance provider, 
 
 Hong Kong DengYueMed provides a detailed overview of how international health insurance works in Chinese hospitals, the most commonly accepted insurance providers, direct billing mechanisms, and important considerations for overseas patients planning medical treatment in China.
 
-![International Patient Services in China](/medical-news-site/images/china-hospital-international-services.png)
+![International Patient Services in China](/images/china-hospital-international-services.png)
 
 ---
 
@@ -90,7 +90,7 @@ For example, premium plans may cover hospitalization, surgery, cancer treatment,
 
 Therefore, patients should always refer to the specific terms and conditions of their individual policy rather than relying solely on the insurer's brand name.
 
-![International Health Insurance Coverage](/medical-news-site/images/international-health-insurance-coverage.png)
+![International Health Insurance Coverage](/images/international-health-insurance-coverage.png)
 
 ---
 

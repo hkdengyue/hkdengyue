@@ -3,7 +3,7 @@ title: "Are Overseas Medical Expenses High? Which Insurance Plans Can Reimburse 
 date: "2026-06-09"
 category: "medical-tourism"
 excerpt: "Understanding overseas medical costs, international health insurance, reimbursement rules, and strategies to reduce financial burdens when seeking treatment abroad."
-image: "/medical-news-site/images/overseas-medical-insurance-reimbursement.png"
+image: "/images/overseas-medical-insurance-reimbursement.png"
 author: "DengYue Medical"
 featured: false
 ---

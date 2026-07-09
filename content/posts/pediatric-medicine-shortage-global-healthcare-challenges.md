@@ -3,7 +3,7 @@ title: "Why Are Pediatric Medicines Still in Short Supply? The Hidden Challenges
 date: "2026-06-12"
 excerpt: "Despite advances in modern medicine, pediatric drug shortages remain a global challenge. Explore the barriers to pediatric drug development, rare disease treatment access, and the future of pediatric healthcare."
 category: "rare-disease"
-image: "/medical-news-site/images/pediatric-medicine-shortage-cover.png"
+image: "/images/pediatric-medicine-shortage-cover.png"
 author: "DengYueMed"
 tags:
   - Pediatric Medicine
@@ -55,7 +55,7 @@ At the same time, the risks associated with inappropriate medication use in chil
 
 ## Challenges Are Even Greater in Pediatric Oncology and Rare Diseases
 
-![Rare Disease Care for Children](/medical-news-site/images/pediatric-rare-disease-care.png)
+![Rare Disease Care for Children](/images/pediatric-rare-disease-care.png)
 
 Among all pediatric medication challenges, pediatric oncology and rare diseases remain the most complex areas.
 
@@ -176,7 +176,7 @@ Smaller cities and primary healthcare institutions still face major barriers in 
 
 ## How Is the World Improving Pediatric Medication Systems?
 
-![Pediatric Medicine Accessibility](/medical-news-site/images/pediatric-medicine-accessibility.png)
+![Pediatric Medicine Accessibility](/images/pediatric-medicine-accessibility.png)
 
 In recent years, many countries and international organizations have increased support for pediatric drug development.
 

@@ -3,10 +3,10 @@ title: "From Seeking Medical Care in China to Precision Medicine: Comprehensive 
 date: "2026-06-01"
 summary: "China's healthcare system is attracting more international patients through precision medicine, innovative therapies, efficient care pathways, and cost advantages, accelerating the growth of medical tourism and cross-border healthcare."
 category: "medical-tourism"
-image: "/medical-news-site/images/china-medical-services-cover.png"
+image: "/images/china-medical-services-cover.png"
 ---
 
-![International Medical Services in China](/medical-news-site/images/china-medical-services-cover.png)
+![International Medical Services in China](/images/china-medical-services-cover.png)
 
 # From Seeking Medical Care in China to Precision Medicine: Comprehensive Upgrades in International Patient Services at Chinese Hospitals
 

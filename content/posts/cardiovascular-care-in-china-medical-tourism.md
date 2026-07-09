@@ -3,7 +3,7 @@ title: "Why Are More Patients Choosing China for Cardiovascular Disease Treatmen
 date: "2026-06-08"
 category: "medical-tourism"
 excerpt: "With advanced cardiovascular technologies, experienced specialists, innovative therapies, and competitive treatment costs, China is becoming an increasingly attractive destination for international patients seeking heart disease treatment."
-image: "/medical-news-site/images/cardiovascular-care-china.png"
+image: "/images/cardiovascular-care-china.png"
 author: "DengYue Medical"
 featured: false
 ---

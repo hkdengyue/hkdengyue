@@ -7,7 +7,7 @@ summary: "At ASCO 2026, 13 studies from 12 Chinese biopharma companies were sele
 
 category: "innovative-drugs"
 
-image: "/medical-news-site/images/china-innovative-drugs-asco-2026.png"
+image: "/images/china-innovative-drugs-asco-2026.png"
 
 author: "DengYueMed"
 
@@ -26,7 +26,7 @@ tags:
 
 # 2026 ASCO: China’s Innovative Drug Boom — 12 Chinese Biopharma Companies and 13 Major Studies Enter the Global Spotlight
 
-![ASCO 2026 China Innovative Drugs](/medical-news-site/images/china-innovative-drugs-asco-2026.png)
+![ASCO 2026 China Innovative Drugs](/images/china-innovative-drugs-asco-2026.png)
 
 The 2026 American Society of Clinical Oncology (ASCO) Annual Meeting was held in Chicago from May 29 to June 2, 2026.
 
@@ -44,7 +44,7 @@ Among all Chinese companies participating in this year’s ASCO meeting, Akeso a
 
 Its Phase III HARMONi-6 study, comparing ivonescimab plus chemotherapy versus tislelizumab plus chemotherapy, was officially selected for the ASCO Plenary Session, making it the only Chinese study included in this year’s highest-profile conference segment.
 
-![Ivonescimab Injection](/medical-news-site/images/ivonescimab.png)
+![Ivonescimab Injection](/images/ivonescimab.png)
 
 Previously, interim analysis results from HARMONi-6 were presented at the 2025 ESMO Congress:
 

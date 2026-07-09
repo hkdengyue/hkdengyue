@@ -3,7 +3,7 @@ title: "Behind New Indication Approvals: How Drug Accessibility and Supply Chain
 date: "2026-06-12"
 excerpt: "Drug repurposing is reshaping pharmaceutical markets worldwide. Discover how new indication approvals affect drug accessibility, patient demand, supply chain planning, and global healthcare delivery."
 category: "innovative-drugs"
-image: "/medical-news-site/images/drug-repurposing-supply-chain-accessibility-cover.png"
+image: "/images/drug-repurposing-supply-chain-accessibility-cover.png"
 author: "DengYueMed"
 tags:
   - Drug Repurposing
@@ -26,7 +26,7 @@ Drug repurposing refers to the process in which an existing medicine, already ap
 
 For patients, drug repurposing means more treatment options. For healthcare providers, it creates new clinical applications. For the pharmaceutical industry as a whole, it can significantly influence supply chains, market demand, and drug accessibility. In many cases, long before a new indication receives regulatory approval, stakeholders have already begun preparing for future demand.
 
-![Drug Repurposing Research](/medical-news-site/images/drug-repurposing-supply-chain-accessibility-cover.png)
+![Drug Repurposing Research](/images/drug-repurposing-supply-chain-accessibility-cover.png)
 
 ## Demand for New Indications Often Emerges Before Approval
 
@@ -48,7 +48,7 @@ However, pharmaceutical manufacturing is not simply a matter of increasing produ
 
 If demand grows faster than the supply chain can respond, temporary shortages may occur, potentially affecting patient access to treatment. Consequently, forecasting future demand has become an essential component of modern pharmaceutical supply management.
 
-![Pharmaceutical Supply Chain](/medical-news-site/images/drug-repurposing-supply-chain-accessibility-supply-chain.png)
+![Pharmaceutical Supply Chain](/images/drug-repurposing-supply-chain-accessibility-supply-chain.png)
 
 ## How Is Future Demand Predicted?
 

@@ -3,10 +3,10 @@ title: "Overseas Medical Treatment Process: How to Book Foreign Hospitals and Sm
 date: "2026-06-04"
 summary: "As global medical resources continue to integrate, more and more patients are seeking cross-border medical services. This article outlines the process of booking foreign hospitals, preparing medical records, and planning the entire overseas medical journey."
 category: "medical-tourism"
-image: "/medical-news-site/images/overseas-medical-treatment-cover.png"
+image: "/images/overseas-medical-treatment-cover.png"
 ---
 
-![Overseas Medical Treatment](/medical-news-site/images/overseas-medical-treatment-cover.png)
+![Overseas Medical Treatment](/images/overseas-medical-treatment-cover.png)
 
 # Overseas Medical Treatment Process: How to Book Foreign Hospitals and Smoothly Complete Cross-Border Medical Care
 

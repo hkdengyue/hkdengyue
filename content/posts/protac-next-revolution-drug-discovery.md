@@ -3,13 +3,13 @@ title: "From Inhibition to Degradation: Why PROTAC Is Considered the Next Revolu
 date: "2026-06-18"
 excerpt: "PROTAC technology is transforming drug discovery by shifting the focus from inhibiting disease proteins to eliminating them entirely. Learn how targeted protein degradation could reshape the future of precision medicine."
 category: "biotech"
-image: "/medical-news-site/images/protac-mechanism.png"
+image: "/images/protac-mechanism.png"
 slug: "from-inhibition-to-degradation-why-protac-is-the-next-revolution-in-drug-discovery"
 ---
 
 As precision medicine continues to advance, researchers are increasingly looking beyond traditional small-molecule inhibitors toward entirely new therapeutic strategies. Among the most promising innovations is **PROTAC (Proteolysis Targeting Chimera)** technology, a platform that aims not merely to suppress disease-causing proteins, but to remove them altogether.
 
-![PROTAC Mechanism](/medical-news-site/images/protac-mechanism.png)
+![PROTAC Mechanism](/images/protac-mechanism.png)
 
 For decades, small-molecule inhibitors have served as a cornerstone of modern drug development. Whether in [oncology](https://dengyuemed.github.io/oncology/), immunology, or metabolic diseases, their fundamental principle has remained the same: binding to a target protein and blocking its function to alter disease progression.
 
@@ -66,7 +66,7 @@ Throughout this process, the PROTAC molecule functions primarily as a bridge or 
 
 This mechanism has often been described as a **“borrowed knife” strategy** in drug design.
 
-![PROTAC Ternary Complex](/medical-news-site/images/protac-structure.png)
+![PROTAC Ternary Complex](/images/protac-structure.png)
 
 ---
 

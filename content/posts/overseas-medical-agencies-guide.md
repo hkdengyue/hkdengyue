@@ -3,12 +3,12 @@ title: "Are Overseas Medical Agencies Reliable? How to Choose a Reputable Intern
 date: "2026-06-04"
 category: "medical-tourism"
 excerpt: "As cross-border healthcare becomes increasingly common, patients often rely on medical facilitators to navigate complex healthcare systems. Learn how to evaluate international healthcare service providers and why China is becoming a growing destination for medical treatment."
-image: "/medical-news-site/images/concord-medical-center.png"
+image: "/images/concord-medical-center.png"
 ---
 
 # Are Overseas Medical Agencies Reliable? How to Choose a Reputable International Healthcare Service Provider
 
-![Concord Medical Center Reception](/medical-news-site/images/concord-medical-center.png)
+![Concord Medical Center Reception](/images/concord-medical-center.png)
 
 As global healthcare becomes increasingly interconnected, cross-border medical care has become an important option for many patients seeking better treatment opportunities. Traditionally, overseas medical travel often meant destinations such as the United States, Japan, Germany, or Singapore. In recent years, however, a new trend has emerged: an increasing number of international patients are looking toward China for medical treatment.
 
