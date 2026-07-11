@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-siteUrl: "https://med-news.pages.dev",
+siteUrl: "https://hkdengyue.github.io",
 
 generateRobotsTxt: true,
 
