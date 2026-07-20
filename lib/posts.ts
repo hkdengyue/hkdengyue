@@ -25,7 +25,7 @@ function normalizeDate(date: unknown): string {
     return date.toISOString().split("T")[0];
   }
 
-  return String(date);
+  return String(date).split("T")[0];
 }
 
 function normalizeCategory(category: unknown): string[] {
@@ -131,17 +131,22 @@ export function getAllPosts(): Post[] {
         data.category
       ),
 
-      tags: normalizeTags(data.tags),
+      tags: normalizeTags(
+        data.tags
+      ),
 
-      image: normalizeImage(data.image),
+      image: normalizeImage(
+        data.image
+      ),
     };
   });
 
-  return posts.sort(
-    (a, b) =>
-      new Date(b.date).getTime() -
-      new Date(a.date).getTime()
-  );
+  return posts.sort((a, b) => {
+    const timeA = Date.parse(a.date);
+    const timeB = Date.parse(b.date);
+
+    return timeB - timeA;
+  });
 }
 
 export function getPostsByCategory(
@@ -187,17 +192,21 @@ export function getPostBySlug(slug: string) {
       data.category
     ),
 
-    tags: normalizeTags(data.tags),
+    tags: normalizeTags(
+      data.tags
+    ),
 
-    image: normalizeImage(data.image),
+    image: normalizeImage(
+      data.image
+    ),
 
     content,
   };
 }
 
-/* ==============================
-   上一篇 / 下一篇
-================================ */
+/* ===========================================
+   Previous / Next Article
+=========================================== */
 
 export function getAdjacentPosts(
   slug: string
@@ -221,9 +230,12 @@ export function getAdjacentPosts(
   };
 }
 
-/* ==============================
-   推荐文章（优先Tag）
-================================ */
+/* ===========================================
+   Related Articles
+   Priority:
+   1. Shared Tags
+   2. Shared Category
+=========================================== */
 
 export function getRelatedPosts(
   slug: string,
@@ -235,27 +247,24 @@ export function getRelatedPosts(
     (post) => post.slug !== slug
   );
 
-  // 第一优先：Tag
-  let related = posts.filter((post) =>
+  const tagMatched = posts.filter((post) =>
     post.tags.some((tag) =>
       current.tags.includes(tag)
     )
   );
 
-  // 第二优先：Category
-  if (related.length < limit) {
-    const more = posts.filter(
-      (post) =>
-        !related.some(
-          (item) => item.slug === post.slug
-        ) &&
-        post.category.some((cat) =>
-          current.category.includes(cat)
-        )
-    );
+  const categoryMatched = posts.filter(
+    (post) =>
+      !tagMatched.some(
+        (item) => item.slug === post.slug
+      ) &&
+      post.category.some((cat) =>
+        current.category.includes(cat)
+      )
+  );
 
-    related = [...related, ...more];
-  }
-
-  return related.slice(0, limit);
+  return [...tagMatched, ...categoryMatched].slice(
+    0,
+    limit
+  );
 }
