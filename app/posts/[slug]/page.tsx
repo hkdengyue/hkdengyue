@@ -8,6 +8,8 @@ import Link from "next/link";
 import {
   getAllPosts,
   getPostBySlug,
+  getAdjacentPosts,
+  getRelatedPosts,
 } from "../../../lib/posts";
 
 import {
@@ -32,7 +34,6 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
-
   const { slug } = await params;
 
   const post = getPostBySlug(slug);
@@ -40,7 +41,6 @@ export async function generateMetadata({
   const url = `/posts/${slug}/`;
 
   return {
-
     title: post.title,
 
     description: post.summary,
@@ -50,7 +50,6 @@ export async function generateMetadata({
     },
 
     openGraph: {
-
       title: post.title,
 
       description: post.summary,
@@ -74,7 +73,6 @@ export async function generateMetadata({
     },
 
     twitter: {
-
       card: "summary_large_image",
 
       title: post.title,
@@ -91,38 +89,42 @@ export async function generateMetadata({
 export default async function PostPage({
   params,
 }: Props) {
-
   const { slug } = await params;
 
   const post = getPostBySlug(slug);
 
-  const processedContent = await remark()
-    .use(gfm)
-    .use(html)
-    .process(post.content);
+  const {
+    previous,
+    next,
+  } = getAdjacentPosts(slug);
 
-  const contentHtml = processedContent
-    .toString()
-    .replace(/<h1/g, "<h2")
-    .replace(/<\/h1>/g, "</h2>");
+  const relatedPosts =
+    getRelatedPosts(slug);
+
+  const processedContent =
+    await remark()
+      .use(gfm)
+      .use(html)
+      .process(post.content);
+
+  const contentHtml =
+    processedContent
+      .toString()
+      .replace(/<h1/g, "<h2")
+      .replace(
+        /<\/h1>/g,
+        "</h2>"
+      );
 
   const currentCategory =
     post.category.length > 0
       ? post.category[0]
       : "biotech";
 
-  const relatedPosts = getAllPosts()
-    .filter(
-      (item) =>
-        item.slug !== slug &&
-        item.category.includes(currentCategory)
-    )
-    .slice(0, 3);
-
   return (
-        <main className="min-h-screen bg-[#f5f7fb]">
+    <main className="min-h-screen bg-[#f5f7fb]">
 
-      {/* Hero */}
+        {/* Hero */}
       <section className="bg-gradient-to-r from-slate-900 via-blue-900 to-cyan-800 text-white">
 
         <div className="max-w-5xl mx-auto px-6 py-24">
@@ -219,24 +221,104 @@ export default async function PostPage({
 
       </section>
 
+            {/* Previous / Next */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+
+        <div className="grid md:grid-cols-2 gap-6">
+
+          {previous ? (
+
+            <Link
+              href={`/posts/${previous.slug}`}
+              className="group rounded-3xl bg-white shadow-lg p-8 hover:shadow-2xl transition"
+            >
+
+              <p className="text-sm uppercase tracking-widest text-gray-400 mb-3">
+
+                ← Previous Article
+
+              </p>
+
+              <h3 className="text-2xl font-bold group-hover:text-blue-600 transition">
+
+                {previous.title}
+
+              </h3>
+
+              <p className="mt-4 text-gray-500 line-clamp-2">
+
+                {previous.summary}
+
+              </p>
+
+            </Link>
+
+          ) : (
+
+            <div />
+
+          )}
+
+          {next ? (
+
+            <Link
+              href={`/posts/${next.slug}`}
+              className="group rounded-3xl bg-white shadow-lg p-8 text-right hover:shadow-2xl transition"
+            >
+
+              <p className="text-sm uppercase tracking-widest text-gray-400 mb-3">
+
+                Next Article →
+
+              </p>
+
+              <h3 className="text-2xl font-bold group-hover:text-blue-600 transition">
+
+                {next.title}
+
+              </h3>
+
+              <p className="mt-4 text-gray-500 line-clamp-2">
+
+                {next.summary}
+
+              </p>
+
+            </Link>
+
+          ) : (
+
+            <div />
+
+          )}
+
+        </div>
+
+      </section>
+
       {/* Related Coverage */}
       <section className="max-w-6xl mx-auto px-6 pb-24">
 
         <div className="flex items-center justify-between mb-10">
 
           <h2 className="text-4xl font-black">
+
             Related Coverage
+
           </h2>
 
           <Link
             href={`/${currentCategory}`}
             className="text-blue-600 font-semibold hover:underline"
           >
+
             View All Articles →
+
           </Link>
 
         </div>
-                {relatedPosts.length > 0 ? (
+
+        {relatedPosts.length > 0 ? (
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 
@@ -251,12 +333,7 @@ export default async function PostPage({
                 <div className="relative h-56 overflow-hidden">
 
                   <Image
-                    src={
-                      item.image &&
-                      item.image.startsWith("/")
-                        ? item.image
-                        : DEFAULT_IMAGE
-                    }
+                    src={item.image || DEFAULT_IMAGE}
                     alt={item.title}
                     fill
                     className="object-cover transition duration-500 group-hover:scale-105"
@@ -274,7 +351,9 @@ export default async function PostPage({
                         key={cat}
                         className="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700"
                       >
+
                         {cat}
+
                       </span>
 
                     ))}
@@ -322,9 +401,10 @@ export default async function PostPage({
           </div>
 
         )}
-              </section>
 
-      {/* CTA */}
+      </section>
+
+            {/* CTA */}
       <section className="bg-slate-900 text-white">
 
         <div className="max-w-6xl mx-auto px-6 py-20 text-center">
@@ -341,8 +421,8 @@ export default async function PostPage({
             biotechnology, oncology, rare diseases,
             healthcare policy, and global pharmaceutical
             industry developments to help healthcare
-            professionals and industry partners stay
-            informed.
+            professionals, researchers, and industry partners
+            stay informed.
 
           </p>
 
@@ -369,6 +449,5 @@ export default async function PostPage({
       </section>
 
     </main>
-
   );
 }
