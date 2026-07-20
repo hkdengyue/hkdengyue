@@ -14,6 +14,7 @@ export interface Post {
   date: string;
   summary: string;
   category: string[];
+  tags: string[];
   image: string;
 }
 
@@ -39,6 +40,20 @@ function normalizeCategory(category: unknown): string[] {
   }
 
   return ["biotech"];
+}
+
+function normalizeTags(tags: unknown): string[] {
+  if (Array.isArray(tags)) {
+    return tags.map((item) =>
+      String(item).trim().toLowerCase()
+    );
+  }
+
+  if (typeof tags === "string") {
+    return [tags.trim().toLowerCase()];
+  }
+
+  return [];
 }
 
 function normalizeImage(image: unknown): string {
@@ -82,7 +97,7 @@ export function getAllPosts(): Post[] {
     .readdirSync(postsDirectory)
     .filter((file) => file.endsWith(".md"));
 
-  const posts = fileNames.map((fileName) => {
+  const posts: Post[] = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.md$/, "");
 
     const fullPath = path.join(
@@ -115,6 +130,8 @@ export function getAllPosts(): Post[] {
       category: normalizeCategory(
         data.category
       ),
+
+      tags: normalizeTags(data.tags),
 
       image: normalizeImage(data.image),
     };
@@ -170,8 +187,75 @@ export function getPostBySlug(slug: string) {
       data.category
     ),
 
+    tags: normalizeTags(data.tags),
+
     image: normalizeImage(data.image),
 
     content,
   };
+}
+
+/* ==============================
+   上一篇 / 下一篇
+================================ */
+
+export function getAdjacentPosts(
+  slug: string
+) {
+  const posts = getAllPosts();
+
+  const index = posts.findIndex(
+    (post) => post.slug === slug
+  );
+
+  return {
+    previous:
+      index < posts.length - 1
+        ? posts[index + 1]
+        : null,
+
+    next:
+      index > 0
+        ? posts[index - 1]
+        : null,
+  };
+}
+
+/* ==============================
+   推荐文章（优先Tag）
+================================ */
+
+export function getRelatedPosts(
+  slug: string,
+  limit = 3
+) {
+  const current = getPostBySlug(slug);
+
+  const posts = getAllPosts().filter(
+    (post) => post.slug !== slug
+  );
+
+  // 第一优先：Tag
+  let related = posts.filter((post) =>
+    post.tags.some((tag) =>
+      current.tags.includes(tag)
+    )
+  );
+
+  // 第二优先：Category
+  if (related.length < limit) {
+    const more = posts.filter(
+      (post) =>
+        !related.some(
+          (item) => item.slug === post.slug
+        ) &&
+        post.category.some((cat) =>
+          current.category.includes(cat)
+        )
+    );
+
+    related = [...related, ...more];
+  }
+
+  return related.slice(0, limit);
 }
