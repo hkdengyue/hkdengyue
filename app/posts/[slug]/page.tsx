@@ -17,6 +17,37 @@ import {
   SITE_NAME,
 } from "../../../lib/site";
 
+/* =========================================
+   提取文章目录（TOC）
+========================================= */
+
+function extractHeadings(html: string) {
+  const regex = /<h2>(.*?)<\/h2>/g;
+
+  const headings: {
+    id: string;
+    text: string;
+  }[] = [];
+
+  let match;
+
+  while ((match = regex.exec(html)) !== null) {
+    const text = match[1].replace(/<[^>]+>/g, "");
+
+    const id = text
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-");
+
+    headings.push({
+      id,
+      text,
+    });
+  }
+
+  return headings;
+}
+
 type Props = {
   params: Promise<{
     slug: string;
@@ -51,15 +82,10 @@ export async function generateMetadata({
 
     openGraph: {
       title: post.title,
-
       description: post.summary,
-
       url,
-
       siteName: SITE_NAME,
-
       type: "article",
-
       publishedTime: post.date,
 
       images: [
@@ -74,14 +100,9 @@ export async function generateMetadata({
 
     twitter: {
       card: "summary_large_image",
-
       title: post.title,
-
       description: post.summary,
-
-      images: [
-        post.image || DEFAULT_IMAGE,
-      ],
+      images: [post.image || DEFAULT_IMAGE],
     },
   };
 }
@@ -107,14 +128,25 @@ export default async function PostPage({
       .use(html)
       .process(post.content);
 
-  const contentHtml =
-    processedContent
-      .toString()
-      .replace(/<h1/g, "<h2")
-      .replace(
-        /<\/h1>/g,
-        "</h2>"
-      );
+  const contentHtml = processedContent
+    .toString()
+    .replace(/<h1/g, "<h2")
+    .replace(/<\/h1>/g, "</h2>")
+    .replace(
+      /<h2>(.*?)<\/h2>/g,
+      (_, title) => {
+        const id = title
+          .replace(/<[^>]+>/g, "")
+          .toLowerCase()
+          .replace(/[^\w\s-]/g, "")
+          .replace(/\s+/g, "-");
+
+        return `<h2 id="${id}">${title}</h2>`;
+      }
+    );
+
+  const headings =
+    extractHeadings(contentHtml);
 
   const currentCategory =
     post.category.length > 0
@@ -124,7 +156,7 @@ export default async function PostPage({
   return (
     <main className="min-h-screen bg-[#f5f7fb]">
 
-        {/* Hero */}
+      {/* Hero */}
       <section className="bg-gradient-to-r from-slate-900 via-blue-900 to-cyan-800 text-white">
 
         <div className="max-w-5xl mx-auto px-6 py-24">
@@ -144,14 +176,12 @@ export default async function PostPage({
             </span>
 
             {post.category.map((cat) => (
-
               <span
                 key={cat}
                 className="px-3 py-1 rounded-full bg-cyan-700/40 border border-cyan-300/30 capitalize"
               >
                 {cat}
               </span>
-
             ))}
 
           </div>
@@ -160,7 +190,7 @@ export default async function PostPage({
 
       </section>
 
-      {/* Cover Image */}
+      {/* Cover */}
       <section className="max-w-6xl mx-auto px-6 -mt-16 relative z-10">
 
         <div className="relative h-[500px] rounded-[2rem] overflow-hidden shadow-2xl">
@@ -177,47 +207,90 @@ export default async function PostPage({
 
       </section>
 
-      {/* Article */}
-      <section className="max-w-4xl mx-auto px-6 py-20">
+            {/* Article */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
 
-        <article className="bg-white rounded-[2rem] shadow-xl p-8 lg:p-16">
+        <div className="grid lg:grid-cols-[280px_1fr] gap-12">
 
-          {post.summary && (
+          {/* ===========================
+              Table of Contents
+          =========================== */}
+          <aside className="hidden lg:block">
 
-            <div className="border-l-4 border-blue-600 pl-6 mb-12">
+            <div className="sticky top-24 rounded-[2rem] bg-white shadow-xl p-8">
 
-              <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
+              <h2 className="text-2xl font-black mb-6">
 
-                {post.summary}
+                Contents
 
-              </p>
+              </h2>
+
+              <nav className="space-y-3">
+
+                {headings.map((heading) => (
+
+                  <a
+                    key={heading.id}
+                    href={`#${heading.id}`}
+                    className="block text-gray-600 hover:text-blue-600 transition leading-7"
+                  >
+
+                    {heading.text}
+
+                  </a>
+
+                ))}
+
+              </nav>
 
             </div>
 
-          )}
+          </aside>
 
-          <div
-            className="
-              prose
-              prose-xl
-              max-w-none
-              prose-headings:font-black
-              prose-headings:text-slate-900
-              prose-p:text-gray-700
-              prose-p:leading-relaxed
-              prose-li:text-gray-700
-              prose-img:rounded-2xl
-              prose-img:shadow-lg
-              prose-a:text-blue-600
-              prose-a:no-underline
-              hover:prose-a:underline
-            "
-            dangerouslySetInnerHTML={{
-              __html: contentHtml,
-            }}
-          />
+          {/* ===========================
+              Article Content
+          =========================== */}
 
-        </article>
+          <article className="bg-white rounded-[2rem] shadow-xl p-8 lg:p-16">
+
+            {post.summary && (
+
+              <div className="border-l-4 border-blue-600 pl-6 mb-12">
+
+                <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed">
+
+                  {post.summary}
+
+                </p>
+
+              </div>
+
+            )}
+
+            <div
+              className="
+                prose
+                prose-xl
+                max-w-none
+                prose-headings:font-black
+                prose-headings:text-slate-900
+                prose-p:text-gray-700
+                prose-p:leading-relaxed
+                prose-li:text-gray-700
+                prose-img:rounded-2xl
+                prose-img:shadow-lg
+                prose-a:text-blue-600
+                prose-a:no-underline
+                hover:prose-a:underline
+              "
+              dangerouslySetInnerHTML={{
+                __html: contentHtml,
+              }}
+            />
+
+          </article>
+
+        </div>
 
       </section>
 
@@ -230,7 +303,7 @@ export default async function PostPage({
 
             <Link
               href={`/posts/${previous.slug}`}
-              className="group rounded-3xl bg-white shadow-lg p-8 hover:shadow-2xl transition"
+              className="group rounded-3xl bg-white shadow-lg p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
 
               <p className="text-sm uppercase tracking-widest text-gray-400 mb-3">
@@ -263,7 +336,7 @@ export default async function PostPage({
 
             <Link
               href={`/posts/${next.slug}`}
-              className="group rounded-3xl bg-white shadow-lg p-8 text-right hover:shadow-2xl transition"
+              className="group rounded-3xl bg-white shadow-lg p-8 text-right hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
 
               <p className="text-sm uppercase tracking-widest text-gray-400 mb-3">
@@ -349,7 +422,7 @@ export default async function PostPage({
 
                       <span
                         key={cat}
-                        className="inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700"
+                        className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700"
                       >
 
                         {cat}
@@ -421,8 +494,9 @@ export default async function PostPage({
             biotechnology, oncology, rare diseases,
             healthcare policy, and global pharmaceutical
             industry developments to help healthcare
-            professionals, researchers, and industry partners
-            stay informed.
+            professionals, researchers, and industry
+            partners stay informed about the latest
+            medical innovations worldwide.
 
           </p>
 
